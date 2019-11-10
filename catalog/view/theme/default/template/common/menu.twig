@@ -6,7 +6,7 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        {% for category in categories %}
+       {# {% for category in categories %}
         {% if category.children %}
         <li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
           <div class="dropdown-menu">
@@ -22,7 +22,14 @@
         {% else %}
         <li><a href="{{ category.href }}">{{ category.name }}</a></li>
         {% endif %}
-        {% endfor %}
+        {% endfor %}#}
+       <li><a href="#" class="yellow-btn">Приминение удобрений</a></li>
+        <li><a href="/katalog" class="green-btn">{{ text_catalog }}</a></li>
+        <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+        <li><a href="#">Как выбрать удобрение</a></li>
+        <li><a href="#">Акции и скидки</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="#">О нас</a></li>
       </ul>
     </div>
   </nav>

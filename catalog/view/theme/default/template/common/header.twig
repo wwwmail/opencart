@@ -57,9 +57,9 @@
                 </div>
                 <div class="cart-block">{{ cart }}</div>
                 <div class="language-block">{{ language }}</div>
-                <div class="user-cabinet">
+                <div class="user-cabinet ">
                     <ul class="list-inline">
-                        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_account }}</span> <span class="caret"></span></a>
+                        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle vertical-align user-cabinet-link" data-toggle="dropdown"><i class="user-cabinet-icon"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_account }}</span></a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 {% if logged %}
                                     <li><a href="{{ account }}">{{ text_account }}</a></li>
@@ -112,8 +112,7 @@
                           <h1><a href="{{ home }}">{{ name }}</a></h1>
                           {% endif %}</div>#}
                     </div>
- <li><a href="{{ shopping_cart }}" title="{{ text_shopping_cart }}"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_shopping_cart }}</span></a></li>
-                    <div class="col-sm-3">{{ cart }}</div>
+ 
                 </div>
             </div>
         </header>

@@ -24,21 +24,35 @@
 {% endif %}
 #}
 {% if languages|length > 1 %}
-<div class="pull-left">
-  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
-    <div class="btn-group">
-    
-        {{ dump(language) }} 
-   
-        {% for language in languages %}
-      
-          <span class="btn btn-link btn-block language-select" type="button" name="{{ language.code }}">{{ language.name }}</span>
-       
-        {% endfor %}
-  
+    <div >
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-language">
+            <div class="btn-group">
+
+
+                {% for language in languages %}
+                    {#<span class="btn btn-link btn-block language-select" type="button" name="{{ language.code }}">{{ language.name }}</span>#}
+                    {% if language.code == 'ru-ru' %}
+                        <span class="language-select 
+                              {% if language.code == code %} 
+                                  active
+                              {%endif%}
+
+                              " type="button" name="{{ language.code }}">RU</span>
+                              
+                    {% elseif language.code == 'uk-ua' %}
+                        <span class="language-select 
+                              {% if language.code == code %} 
+                                  active
+                              {%endif%}
+                              
+                              " type="button" name="{{ language.code }}">UA</span>
+                    {% endif %}
+
+                {% endfor %}
+
+            </div>
+            <input type="hidden" name="code" value="" />
+            <input type="hidden" name="redirect" value="{{ redirect }}" />
+        </form>
     </div>
-    <input type="hidden" name="code" value="" />
-    <input type="hidden" name="redirect" value="{{ redirect }}" />
-  </form>
-</div>
 {% endif %}
